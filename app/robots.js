@@ -5,7 +5,7 @@ export default function robots() {
       allow: '/',
       disallow: '',
     },
-    sitemap: 'https://www.dtcembassyvilla.in/sitemap.xml',
+    sitemap: 'https://dtcembassyvilla.co.in/sitemap.xml',
   }
 }
 

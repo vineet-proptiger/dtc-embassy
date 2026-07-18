@@ -33,6 +33,7 @@ const nephilm = localFont({
 })
 
 export const metadata = {
+  metadataBase: new URL('https://dtcembassyvilla.co.in/'),
   title: 'DTC Embassy Villa | 4 & 5 BHK Independent Villas in Rajarhat, Kolkata',
   description: "Experience an exclusive lifestyle at DTC Embassy Villas, a premium gated villa community spread across 6 acres on Rajarhat Main Road. The project features 153 elegant 4 & 5 BHK independent villas.",
 }

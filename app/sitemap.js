@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const base = 'https://lntvayamwagleestate.com/'
+  const base = 'https://dtcembassyvilla.co.in'
 
   return [
     {
