@@ -6,22 +6,7 @@ import { overviewImage } from '../lib/images'
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 
-const EldecoIcon = ({ width = 24, height = 24, style, className }) => (
-  <svg width={width} height={height} viewBox="0 0 32 32" fill="none" strokeLinecap="round" strokeLinejoin="round" style={style} className={className} xmlns="http://www.w3.org/2000/svg">
-    <path d="M 4 4 L 14 4" stroke="#8c4740" strokeWidth="2.5" />
-    <path d="M 4 8 L 14 8" stroke="#8c4740" strokeWidth="2.5" />
-    <path d="M 4 12 L 14 12" stroke="#8c4740" strokeWidth="2.5" />
-    <path d="M 4 16 L 14 16" stroke="#8c4740" strokeWidth="2.5" />
-    <path d="M 4 20 L 14 20" stroke="#8c4740" strokeWidth="2.5" />
-    <path d="M 4 25 Q 6.5 23 9 25 T 14 25" stroke="#1f8bca" strokeWidth="2.5" />
-    <path d="M 4 29 Q 6.5 27 9 29 T 14 29" stroke="#1f8bca" strokeWidth="2.5" />
-    <path d="M 17 2 A 14 14 0 0 1 17 30" stroke="#7eb546" strokeWidth="2.5" />
-    <path d="M 17 6 A 10 10 0 0 1 17 26" stroke="#7eb546" strokeWidth="2.5" />
-    <path d="M 17 10 A 6 6 0 0 1 17 22" stroke="#7eb546" strokeWidth="2.5" />
-    <path d="M 17 14 A 2 2 0 0 1 17 18" stroke="#7eb546" strokeWidth="2.5" />
-    <circle cx="15.5" cy="16" r="1.8" fill="#f8b620" />
-  </svg>
-)
+
 
 /* Curved concave notch at each corner of the info box */
 const CurvedCorners = ({ bg = '#fff' }) => {
