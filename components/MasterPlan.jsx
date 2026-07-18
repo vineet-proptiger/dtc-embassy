@@ -17,6 +17,7 @@ const MasterPlan = ({ setIsOpen }) => {
 
   return (
     <section id="masterplan" style={{
+      scrollMarginTop: '80px',
       padding: '56px 0',
       background: '#ffffff',
       borderBottom: '1px solid #f0f0f0',

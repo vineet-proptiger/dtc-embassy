@@ -67,8 +67,8 @@ const Navbar = ({ setIsOpen }) => {
             className="hidden lg:flex"
             style={{ alignItems: 'center', gap: '28px' }}
           >
-            <a href="#amenities" style={aStyle} onMouseEnter={hover} onMouseLeave={unhover}>AMENITIES</a>
-            <a href="#homes-designed" style={aStyle} onMouseEnter={hover} onMouseLeave={unhover}>GALLERY</a>
+            <a href="#interior-masterpiece" style={aStyle} onMouseEnter={hover} onMouseLeave={unhover}>AMENITIES</a>
+            <a href="#exterior-masterpiece" style={aStyle} onMouseEnter={hover} onMouseLeave={unhover}>GALLERY</a>
             <a href="#overview" style={aStyle} onMouseEnter={hover} onMouseLeave={unhover}>OVERVIEW</a>
             <a href="#masterplan" style={aStyle} onMouseEnter={hover} onMouseLeave={unhover}>FLOOR PLANS</a>
             <a href="#pricing" style={aStyle} onMouseEnter={hover} onMouseLeave={unhover}>PRICE</a>
@@ -126,8 +126,8 @@ const Navbar = ({ setIsOpen }) => {
       {mobileOpen && (
         <div style={{ background: '#fff', borderTop: '1px solid #f0f0f0' }}>
           {[
-            { label: 'AMENITIES',   href: '#amenities' },
-            { label: 'GALLERY',     href: '#homes-designed' },
+            { label: 'AMENITIES',   href: '#interior-masterpiece' },
+            { label: 'GALLERY',     href: '#exterior-masterpiece' },
             { label: 'OVERVIEW',    href: '#overview' },
             { label: 'FLOOR PLANS', href: '#masterplan' },
             { label: 'PRICE',       href: '#pricing' },

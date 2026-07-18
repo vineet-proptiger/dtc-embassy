@@ -48,7 +48,7 @@ const Pricing = ({ setIsOpen }) => {
     <section
       id="pricing"
       className="py-10 sm:py-14 px-4 md:px-8 relative overflow-hidden"
-      style={{ background: "var(--color-bg-muted)" }}
+      style={{ scrollMarginTop: '80px', background: "var(--color-bg-muted)" }}
     >
       <div
         className="absolute top-0 right-0 w-1/3 h-1/3 opacity-5 pointer-events-none"

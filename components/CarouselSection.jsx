@@ -98,6 +98,7 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
 
   return (
     <section id={id} style={{
+      scrollMarginTop: '80px',
       padding: '42px 0 72px 0',
       background: '#f9f9f9',
       color: '#121212',
@@ -116,18 +117,15 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
       `}} />
       <div className="container mx-auto px-4 md:px-8 max-w-[1200px]" data-aos="fade-up" data-aos-delay="100">
 
-        {/* ── Header Row ── */}
-        <div className="flex items-center justify-between mb-8 gap-6 w-full min-h-[50px]">
-
-          {/* Centered Heading */}
-          <div className="flex-1 flex justify-center lg:pl-32">
-            <h2 data-aos="flip-left" data-aos-delay="500" style={{
-              fontFamily: F_JOST, fontWeight: '700', fontSize: '24px',
-              color: '#3A2A0E', letterSpacing: '0.1em', margin: 0,
-            }} className="text-center">{title}</h2>
-          </div>
-
-          {/* Right side Buttons removed as requested */}
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <h2 data-aos="flip-left" data-aos-delay="500" style={{
+            fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
+            color: '#684C1B', letterSpacing: '0.1em',
+            textTransform: 'uppercase', margin: 0,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            {title}
+          </h2>
         </div>
 
         {/* ── Main Sliding Track Gallery (Premium & Zero-Flash) ── */}

@@ -39,7 +39,7 @@ const Overview = ({ setIsOpen }) => {
   return (
     <section
       id="overview"
-      style={{ background: '#fff', padding: '72px 0 80px', borderBottom: '1px solid #f0ede6' }}
+      style={{ scrollMarginTop: '80px', background: '#fff', padding: '72px 0 80px', borderBottom: '1px solid #f0ede6' }}
     >
       <div className="container mx-auto px-4 sm:px-8 max-w-[1200px]">
       
@@ -93,10 +93,10 @@ const Overview = ({ setIsOpen }) => {
             marginTop: 0, marginBottom: '24px',
             textAlign: 'justify',
           }}>
-            <strong>DTC Embassy Villas</strong> is a premium gated villa community spread across <strong>6 acres</strong> on <strong>Rajarhat Main Road</strong>. Designed for discerning homebuyers, the project features just <strong>153 elegant 4 & 5 BHK independent villas</strong> surrounded by over 70,000 sq. ft. of landscaped open spaces, ensuring exceptional privacy and a serene living environment.
+            <strong>DTC Embassy Villas</strong> is a premium gated villa community spread across <strong>6 acres</strong> on <strong>Rajarhat Main Road</strong>. Designed for discerning homebuyers, the project features just <strong>153 elegant 4 & 5 BHK independent villas</strong> surrounded by over 70,000 sq. ft. of landscaped open spaces, ensuring exceptional privacy and a serene living environment. Homebuyers are actively searching for properties in Rajarhat Main Road because of its excellent connectivity to New Town, Sector V, Chinar Park, VIP Road, Rajarhat Chowmatha, and Netaji Subhas Chandra Bose International Airport. The location also provides quick access to leading IT hubs, reputed schools, hospitals, shopping centres, and upcoming infrastructure, making daily life more convenient.
             {isExpanded ? (
               <>
-                {" "}Homebuyers are actively searching for properties in Rajarhat Main Road because of its excellent connectivity to New Town, Sector V, Chinar Park, VIP Road, Rajarhat Chowmatha, and Netaji Subhas Chandra Bose International Airport. The location also provides quick access to leading IT hubs, reputed schools, hospitals, shopping centres, and upcoming infrastructure, making daily life more convenient. Compared to conventional apartment developments, this villa community offers greater privacy, larger living spaces, and a premium lifestyle while keeping every essential destination within easy reach.
+                {" "}Compared to conventional apartment developments, this villa community offers greater privacy, larger living spaces, and a premium lifestyle while keeping every essential destination within easy reach.
                 {" "}
                 <button
                   onClick={() => setIsExpanded(false)}
@@ -152,6 +152,7 @@ const Overview = ({ setIsOpen }) => {
 
           {/* Info Box */}
           <div
+            className="hidden lg:block"
             data-aos="fade-up"
             data-aos-delay="100"
             data-aos-duration="1000"

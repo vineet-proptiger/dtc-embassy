@@ -237,6 +237,10 @@ const Hero = ({ setIsOpen }) => {
             text-shadow: none !important;
           }
 
+          .hero-title {
+            animation: heroPriceBlink 1.4s infinite;
+          }
+
           .hero-subtitle {
             font-size: 16px !important;
           }
