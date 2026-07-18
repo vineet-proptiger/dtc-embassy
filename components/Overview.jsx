@@ -43,13 +43,32 @@ const Overview = ({ setIsOpen }) => {
     >
       <div className="container mx-auto px-4 sm:px-8 max-w-[1200px]">
       
+      {/* ── Mobile Section Heading ── */}
+      <div className="block lg:hidden" style={{ marginBottom: '32px', textAlign: 'left' }}>
+        <h2 data-aos="flip-right" data-aos-delay="500" style={{
+          fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
+          color: '#3A2A0E', letterSpacing: '0.1em',
+          textTransform: 'uppercase', margin: '0 0 10px 0',
+          display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '10px'
+        }}>
+          Welcome to DTC Embassy Villa
+        </h2>
+        <h3 style={{
+          fontFamily: F_JOST, fontWeight: '500', fontSize: '14px',
+          color: '#C9A96E', letterSpacing: '0.05em',
+          textTransform: 'capitalize', margin: 0,
+        }}>
+          Premium Gated Villa Community on Rajarhat Main Road
+        </h3>
+      </div>
+
       <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-14">
         
         {/* ── Left Side: Text Content ── */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-1/2 order-2 lg:order-1">
           
-          {/* ── Section Heading ── */}
-          <div style={{ marginBottom: '40px', textAlign: 'left' }}>
+          {/* ── Desktop Section Heading ── */}
+          <div className="hidden lg:block" style={{ marginBottom: '40px', textAlign: 'left' }}>
             <h2 data-aos="flip-right" data-aos-delay="500" style={{
               fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
               color: '#3A2A0E', letterSpacing: '0.1em',
@@ -59,11 +78,11 @@ const Overview = ({ setIsOpen }) => {
               Welcome to DTC Embassy Villa
             </h2>
             <h3 style={{
-              fontFamily: F_JOST, fontWeight: '600', fontSize: '16px',
+              fontFamily: F_JOST, fontWeight: '500', fontSize: '14px',
               color: '#C9A96E', letterSpacing: '0.05em',
               textTransform: 'capitalize', margin: 0,
             }}>
-              Premium Villas on Rajarhat Main Road
+              Premium Gated Villa Community on Rajarhat Main Road
             </h3>
           </div>
           
@@ -152,7 +171,7 @@ const Overview = ({ setIsOpen }) => {
                 padding: '20px 16px',
                 textAlign: 'left',
               }}>
-                <div data-aos="fade" data-aos-delay={600 + i * 150} data-aos-duration="800" data-aos-once="true">
+                <div data-aos="fade" data-aos-delay={600 + i * 150} data-aos-duration="800">
                   <p style={{
                     fontFamily: F_JOST, fontSize: '10px', fontWeight: '500',
                     color: '#b5a99a', letterSpacing: '0.18em',
@@ -176,15 +195,14 @@ const Overview = ({ setIsOpen }) => {
         </div>
 
         {/* ── Right Side: Image ── */}
-        <div className="w-full lg:w-1/2 mt-8 lg:mt-0" data-aos="fade-left">
+        <div className="w-full lg:w-1/2 mt-8 lg:mt-0 order-1 lg:order-2" data-aos="fade-left">
           <div className="relative w-full flex justify-center items-center">
             <Image 
               src={overviewImage} 
               alt="DTC Embassy Villa Overview" 
               width={1000}
               height={1200}
-              className="rounded-lg shadow-lg"
-              style={{ width: '75%', height: 'auto', objectFit: 'contain', margin: '0 auto' }}
+              className="w-[95%] lg:w-[75%] h-auto object-contain mx-auto rounded-lg shadow-lg"
             />
           </div>
         </div>
