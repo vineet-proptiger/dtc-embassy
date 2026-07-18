@@ -8,6 +8,11 @@ const slides = [
   { img: heroImages.banner2 }
 ]
 
+const mobileSlides = [
+  { img: '/images/hero/smDevice1.webp' },
+  { img: '/images/hero/smDevice2.webp' }
+]
+
 const Hero = ({ setIsOpen }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -319,19 +324,25 @@ const Hero = ({ setIsOpen }) => {
         ))}
       </div>
 
-      {/* ── Mobile Static Image ── */}
+      {/* ── Mobile Carousel ── */}
       <div className="hero-slider-wrapper grid md:hidden">
-        <div className="slide-layer active" style={{ gridArea: '1 / 1 / 2 / 2' }}>
-          <Image
-            src="/images/hero/smDevice.webp"
-            alt="DTC Embassy Villa Mobile Banner"
-            width={768}
-            height={800}
-            className="hero-image"
-            priority={true}
-            sizes="100vw"
-          />
-        </div>
+        {mobileSlides.map((slide, index) => (
+          <div 
+            key={index} 
+            className={`slide-layer ${index === currentSlide ? 'active' : ''}`}
+            style={{ gridArea: '1 / 1 / 2 / 2' }}
+          >
+            <Image
+              src={slide.img}
+              alt={`Mobile Banner ${index + 1}`}
+              width={768}
+              height={800}
+              className="hero-image desktop-hero-image"
+              priority={index === 0}
+              sizes="100vw"
+            />
+          </div>
+        ))}
       </div>
 
       {/* ── Dark overlay for text legibility ── */}

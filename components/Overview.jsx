@@ -63,7 +63,7 @@ const Overview = ({ setIsOpen }) => {
               color: '#C9A96E', letterSpacing: '0.05em',
               textTransform: 'capitalize', margin: 0,
             }}>
-              Premium Gated Villa Community on Rajarhat Main Road
+              Premium Villas on Rajarhat Main Road
             </h3>
           </div>
           
