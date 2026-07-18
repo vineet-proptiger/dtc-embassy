@@ -46,7 +46,7 @@ const Hero = ({ setIsOpen }) => {
           bottom: 0;
           left: 0;
           z-index: 10;
-          padding: 100px 80px 30px 44px; /* Reduced bottom padding to move content further down */
+          padding: 100px 80px 160px 44px; /* Increased bottom padding to move content up */
           width: 100%;
           max-width: 800px;
           background: radial-gradient(
@@ -168,7 +168,7 @@ const Hero = ({ setIsOpen }) => {
 
         @keyframes heroZoomInOut {
           0% { transform: scale(1); }
-          50% { transform: scale(1.05); }
+          50% { transform: scale(1.1); }
           100% { transform: scale(1); }
         }
 
@@ -180,14 +180,7 @@ const Hero = ({ setIsOpen }) => {
 
         /* ─── Desktop ─── */
         @media (min-width: 1024px) {
-          .hero-container {
-            height: calc(100vh - 80px);
-            max-height: 700px;
-          }
-          .desktop-hero-image {
-            height: 100% !important;
-            object-fit: cover;
-          }
+          /* Let the image define the container height to prevent cropping */
         }
 
         .carousel-dots {
