@@ -168,7 +168,7 @@ const Hero = ({ setIsOpen }) => {
 
         @keyframes heroZoomInOut {
           0% { transform: scale(1); }
-          50% { transform: scale(1.1); }
+          50% { transform: scale(1.05); }
           100% { transform: scale(1); }
         }
 
@@ -180,7 +180,14 @@ const Hero = ({ setIsOpen }) => {
 
         /* ─── Desktop ─── */
         @media (min-width: 1024px) {
-          /* Let the image define the container height to prevent cropping */
+          .hero-container {
+            height: calc(100vh - 80px);
+            max-height: 700px;
+          }
+          .desktop-hero-image {
+            height: 100% !important;
+            object-fit: cover;
+          }
         }
 
         .carousel-dots {
