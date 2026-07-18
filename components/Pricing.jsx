@@ -7,24 +7,24 @@ const PRIMARY = "var(--color-primary, #3A2A0E)";
 const units = [
   {
     type: "3 BHK Residences",
-    size: "On Request",
-    price: "Ask For Price",
+    size: "1870 sq.ft. +",
+    price: "₹1.4 Cr*",
     oldPrice: null,
     btnText: "Get Details",
     features: [
-      "Super Built-up: On Request",
+      "Super Built-up: 1870 sq.ft. +",
       "Premium Specifications",
       "Luxury Finishes",
     ],
   },
   {
     type: "4 BHK Residences",
-    size: "On Request",
+    size: "2717 sq.ft. +",
     price: "Ask For Price",
     oldPrice: null,
     btnText: "Get Details",
     features: [
-      "Super Built-up: On Request",
+      "Super Built-up: 2717 sq.ft. +",
       "Premium Specifications",
       "Luxury Finishes",
     ],

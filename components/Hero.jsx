@@ -41,7 +41,7 @@ const Hero = ({ setIsOpen }) => {
           bottom: 0;
           left: 0;
           z-index: 10;
-          padding: 100px 80px 72px 44px;
+          padding: 100px 80px 160px 44px; /* Increased bottom padding to move content up */
           width: 100%;
           max-width: 800px;
           background: radial-gradient(
@@ -163,18 +163,7 @@ const Hero = ({ setIsOpen }) => {
 
         /* ─── Desktop ─── */
         @media (min-width: 1024px) {
-          .hero-container {
-            aspect-ratio: 21/9;
-          }
-          .slide-layer {
-            position: absolute;
-            height: 100%;
-          }
-          .hero-image {
-            height: 100%;
-            object-fit: cover;
-            object-position: center 80%;
-          }
+          /* Let the image define the container height to prevent cropping */
         }
 
         .carousel-dots {
@@ -199,20 +188,8 @@ const Hero = ({ setIsOpen }) => {
 
         /* ─── Tablet ─── */
         @media (min-width: 768px) and (max-width: 1023px) {
-          .hero-container {
-            aspect-ratio: 16/7;
-          }
-          .slide-layer {
-            position: absolute;
-            height: 100%;
-          }
-          .hero-image {
-            height: 100%;
-            object-fit: cover;
-            object-position: center 80%;
-          }
           .hero-content {
-            padding: 0 28px 56px !important;
+            padding: 0 28px 110px !important; /* Increased bottom padding */
           }
         }
 
@@ -393,7 +370,7 @@ const Hero = ({ setIsOpen }) => {
                   className="btn-gold-outline hero-btn-one"
                   style={{ fontSize: '14px', padding: '11px 22px', pointerEvents: 'none', fontWeight: '700', textTransform: 'none' }}
                 >
-                  Price starts <span className="hero-price-amt" style={{ fontSize: '15px', marginLeft: '6px' }}>On Request</span>
+                  Price starts <span className="hero-price-amt" style={{ fontSize: '15px', marginLeft: '6px' }}>₹ 1.4 Cr*</span>
                 </div>
               </div>
 

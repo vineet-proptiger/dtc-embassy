@@ -160,12 +160,12 @@ const MasterPlan = ({ setIsOpen }) => {
                 </span>
               </div>
 
-              {/* Blurred/Clear image */}
+              {/* Blurred image */}
               <Image src={plans[activePlan].img} alt={plans[activePlan].label} fill
                 style={{ 
                   objectFit: 'cover', 
-                  filter: activePlan === 0 ? 'none' : 'blur(5px)', 
-                  transform: activePlan === 0 ? 'none' : 'scale(1.06)' 
+                  filter: 'blur(5px)', 
+                  transform: 'scale(1.06)' 
                 }} />
 
               {/* Dark overlay */}

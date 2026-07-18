@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 
 const Overview = dynamic(() => import('../components/Overview'), { ssr: true })
+const ExploreVideo = dynamic(() => import('../components/ExploreVideo'), { ssr: true })
 const Highlights = dynamic(() => import('../components/Highlights'), { ssr: true })
 const Amenities = dynamic(() => import('../components/Amenities'), { ssr: true })
 const Pricing = dynamic(() => import('../components/Pricing'), { ssr: true })
@@ -35,6 +36,7 @@ export default function Home() {
       <Navbar setIsOpen={setIsOpen} />
       <Hero setIsOpen={setIsOpen} />
       <Overview setIsOpen={setIsOpen} />
+      <ExploreVideo />
       <Highlights setIsOpen={setIsOpen} />
       {/* <Gallery setIsOpen={setIsOpen} /> */}
       <CarouselSection setIsOpen={setIsOpen} title="Glimpses of the Interior Masterpiece" id="interior-masterpiece" images={galleryInteriorImages} />

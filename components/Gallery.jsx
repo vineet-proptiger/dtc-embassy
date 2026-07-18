@@ -1,7 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { galleryImages } from '../lib/images'
+import { galleryInteriorImages, galleryExteriorImages } from '../lib/images'
+
+const galleryImages = [...galleryInteriorImages, ...galleryExteriorImages]
 
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 

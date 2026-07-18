@@ -127,16 +127,7 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
             }} className="text-center">{title}</h2>
           </div>
 
-          {/* Right side Buttons */}
-          <div className="flex items-center">
-            <button className="btn-brand hidden sm:flex" onClick={() => setIsOpen(true)} data-aos="zoom-in" data-aos-delay="600" style={{ padding: '12px 24px', fontSize: '12px' }}>
-              ENQUIRE NOW
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </button>
-          </div>
+          {/* Right side Buttons removed as requested */}
         </div>
 
         {/* ── Main Sliding Track Gallery (Premium & Zero-Flash) ── */}

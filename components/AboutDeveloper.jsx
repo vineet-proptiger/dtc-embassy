@@ -225,7 +225,7 @@ const AboutDeveloper = ({ setIsOpen }) => (
           <div style={{ padding: '24px 28px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <p style={{ color: '#555', fontFamily: F_SANS, lineHeight: 1.85, fontSize: '14px', margin: '0 0 14px', textAlign: 'justify' }}>
-                <TypewriterText text="DTC Group has been relentless in its approach to providing world-class services in real estate and has a varied portfolio. DTC Group launched its first real estate project and has come a long way with strong commitment to quality and delivery." />
+                <TypewriterText text="DTC is a family owned business established by Mr Satyanarayan Jalan in the 1980s when he took over a century-old mining company in Jharkhand. DTC grew its presence in the mining business by expanding its operations and started exports as well in 1990s. After mining, DTC has established itself in the Real Estate business and is currently doing 60 lakh sq.ft of development across various projects in Kolkata. DTC has also successfully completed infrastructure projects which include underground water pipe laying tenders. Besides, DTC proactively deepened its sectoral presence by extending from a basic engagement to value-addition to provide superior customer service on the one hand and reinforce the business model on the other." />
               </p>
             </div>
 
