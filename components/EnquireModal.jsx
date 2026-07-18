@@ -60,7 +60,7 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
           <div className="p-6 sm:p-7 flex flex-col justify-center flex-1 relative">
             
             {/* Compact Side-by-Side Header */}
-            <div className="flex items-center justify-start gap-3 sm:gap-4 mb-6 border-b border-gray-100 pb-4 mt-2">
+            <div className="flex items-center justify-start gap-3 sm:gap-4 mb-4 border-b border-gray-100 pb-4 mt-2">
               <div className="relative w-[90px] sm:w-[100px] h-10 sm:h-12 shrink-0">
                 <Image 
                   src={logoImages.tarc} 
@@ -76,6 +76,28 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
                 >
                   Book A Free <span className="text-[var(--color-gold)]">Site Visit</span>
                 </h3>
+              </div>
+            </div>
+
+            {/* Trust Badges / USPs */}
+            <div className="bg-[#FAF7F0] rounded-md p-3 px-4 mb-5">
+              <div className="flex flex-wrap gap-x-5 gap-y-2.5 text-[13px] font-medium text-[#091E2A]" style={{ fontFamily: F_SANS }}>
+                <div className="flex items-center gap-1.5">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#117937" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Zero Brokerage</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#117937" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>RERA Verified</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#117937" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>No Spam</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#117937" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Call in 5 Mins</span>
+                </div>
               </div>
             </div>
 

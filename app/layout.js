@@ -41,39 +41,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <GoogleTagManager gtmId="GTM-575H8R87" />
-      {/* <head>
-        <Script
-          id="json-ld-article"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "https://www.eldecocamelot.co.in/"
-              },
-              "headline": "DTC Embassy Villa | 4 & 5 BHK Independent Villas in Rajarhat, Kolkata",
-              "description": "Eldeco Camelot is all set to be the most experiential and premium residential project in the prime corridor of Sector 17, Dwarka.",
-              "image": "https://www.eldecocamelot.co.in/_next/image?url=%2Fimages%2Fhero%2Fbanner1.webp&w=1200&q=75",
-              "author": {
-                "@type": "Organization",
-                "name": "Proptiger Marketing Services Pvt Ltd",
-                "url": "https://www.proptiger.com/Delhi/Sector 17, Dwarka-road/Eldeco-camelot"
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "Proptiger",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://www.proptiger.com/"
-                }
-              },
-              "datePublished": "2026-06-10"
-            })
-          }}
-        />
-      </head> */}
       <body className={`${openSans.variable} ${montserrat.variable} ${cormorant.variable} ${nephilm.variable} font-sans text-dark antialiased`}>
         <Script id="gtag-init" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];

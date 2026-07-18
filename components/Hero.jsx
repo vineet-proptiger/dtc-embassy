@@ -161,6 +161,18 @@ const Hero = ({ setIsOpen }) => {
           display: block;
         }
 
+        @keyframes heroZoomInOut {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+          100% { transform: scale(1); }
+        }
+
+        .desktop-hero-image {
+          animation: heroZoomInOut 25s ease-in-out infinite;
+          transform-origin: center center;
+          will-change: transform;
+        }
+
         /* ─── Desktop ─── */
         @media (min-width: 1024px) {
           /* Let the image define the container height to prevent cropping */
@@ -299,7 +311,7 @@ const Hero = ({ setIsOpen }) => {
               alt={`Banner ${index + 1}`}
               width={1920}
               height={800}
-              className="hero-image"
+              className="hero-image desktop-hero-image"
               priority={index === 0}
               sizes="100vw"
             />
