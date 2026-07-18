@@ -46,7 +46,7 @@ const Hero = ({ setIsOpen }) => {
           bottom: 0;
           left: 0;
           z-index: 10;
-          padding: 100px 80px 160px 44px; /* Increased bottom padding to move content up */
+          padding: 100px 80px 30px 44px; /* Reduced bottom padding to move content further down */
           width: 100%;
           max-width: 800px;
           background: radial-gradient(
