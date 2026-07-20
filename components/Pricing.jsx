@@ -6,7 +6,7 @@ const PRIMARY = "var(--color-primary, #3A2A0E)";
 
 const units = [
   {
-    type: "3 BHK Residences",
+    type: "4 BHK Residences",
     size: "1870 sq.ft. +",
     price: "₹1.4 Cr*",
     oldPrice: null,
@@ -18,7 +18,7 @@ const units = [
     ],
   },
   {
-    type: "4 BHK Residences",
+    type: "5 BHK Residences",
     size: "2717 sq.ft. +",
     price: "Ask For Price",
     oldPrice: null,
