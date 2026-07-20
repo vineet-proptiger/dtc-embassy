@@ -92,11 +92,11 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
                 </div>
                 <div className="flex items-center gap-1.5">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#117937" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
-                  <span>No Spam</span>
+                  <span>Vastu Compliant</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#117937" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
-                  <span>Call in 5 Mins</span>
+                  <span>Limited Inventory</span>
                 </div>
               </div>
             </div>
