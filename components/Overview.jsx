@@ -31,7 +31,7 @@ const infoItems = [
   { label: 'Status',             value: 'New Launch', bgColor: '#FDF8F6' },
   { label: 'Floors',             value: '2', bgColor: '#FFFDF2' },
   { label: 'Units',              value: '153', bgColor: '#F4FAF4' },
-  { label: 'Total Project Area', value: '3.53 acres', bgColor: '#F2FAFD' },
+  { label: 'Total\u00A0Project\nArea', value: '3.53 acres', bgColor: '#F2FAFD' },
 ]
 
 const Overview = ({ setIsOpen }) => {
@@ -169,7 +169,7 @@ const Overview = ({ setIsOpen }) => {
             {infoItems.map((item, i) => (
               <div key={i} className="flex flex-col justify-center" style={{
                 background: item.bgColor || '#fff',
-                padding: '20px 16px',
+                padding: '20px 8px',
                 textAlign: 'left',
               }}>
                 <div data-aos="fade" data-aos-delay={600 + i * 150} data-aos-duration="800">
