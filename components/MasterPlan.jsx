@@ -14,6 +14,7 @@ const plans = [
 
 const MasterPlan = ({ setIsOpen }) => {
   const [activePlan, setActivePlan] = useState(0)
+  const [showLightbox, setShowLightbox] = useState(false)
 
   return (
     <section id="masterplan" style={{
@@ -135,12 +136,17 @@ const MasterPlan = ({ setIsOpen }) => {
 
           {/* RIGHT — Image preview */}
           <div className="w-full lg:flex-1" data-aos="zoom-in">
-            <div style={{
-              position: 'relative', borderRadius: '8px', overflow: 'hidden',
-              border: '1px solid #D5C2A8',
-              boxShadow: '0 10px 36px var(--color-shadow-inner)',
-              height: '100%', minHeight: '400px',
-            }}>
+            <div 
+              onClick={() => activePlan === 0 ? setShowLightbox(true) : setIsOpen(true)}
+              style={{
+                position: 'relative', borderRadius: '8px', overflow: 'hidden',
+                border: '1px solid #D5C2A8',
+                boxShadow: '0 10px 36px var(--color-shadow-inner)',
+                height: '100%', minHeight: '400px',
+                background: '#faf8f5',
+                cursor: 'pointer',
+              }}
+            >
               {/* Brand top accent */}
               <div style={{
                 position: 'absolute', top: 0, left: 0, right: 0, height: '3px',
@@ -161,60 +167,121 @@ const MasterPlan = ({ setIsOpen }) => {
                 </span>
               </div>
 
-              {/* Blurred image */}
+              {/* Image (unblurred for Site Master Plan, blurred for floor plans) */}
               <Image src={plans[activePlan].img} alt={plans[activePlan].label} fill
                 style={{ 
-                  objectFit: 'cover', 
-                  filter: 'blur(5px)', 
-                  transform: 'scale(1.06)' 
+                  objectFit: activePlan === 0 ? 'contain' : 'cover', 
+                  filter: activePlan === 0 ? 'none' : 'blur(5px)', 
+                  transform: activePlan === 0 ? 'none' : 'scale(1.06)' 
                 }} />
 
-              {/* Dark overlay */}
-              <div style={{
-                position: 'absolute', inset: 0,
-                background: 'rgba(17,24,39,0.45)',
-              }} />
+              {/* Dark overlay & Unlock CTA only for unit floor plans */}
+              {activePlan !== 0 && (
+                <>
+                  {/* Dark overlay */}
+                  <div style={{
+                    position: 'absolute', inset: 0,
+                    background: 'rgba(17,24,39,0.45)',
+                  }} />
 
-              {/* CTA in center */}
-              <div style={{
-                position: 'absolute', inset: 0, zIndex: 5,
-                display: 'flex', flexDirection: 'column',
-                alignItems: 'center', justifyContent: 'center', gap: '12px',
-              }}>
+                  {/* CTA in center */}
+                  <div style={{
+                    position: 'absolute', inset: 0, zIndex: 5,
+                    display: 'flex', flexDirection: 'column',
+                    alignItems: 'center', justifyContent: 'center', gap: '12px',
+                  }}>
+                    <div style={{
+                      width: '52px', height: '52px', borderRadius: '50%',
+                      background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(4px)',
+                      border: '2px solid rgba(255,255,255,0.3)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      marginBottom: '4px',
+                    }}>
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M9 21V9" />
+                      </svg>
+                    </div>
+                    <p style={{
+                      fontFamily: F_JOST, fontSize: '13px', color: 'rgba(255,255,255,0.7)',
+                      margin: 0, fontWeight: '600', letterSpacing: '0.04em'
+                    }}>
+                      Register to Unlock Floor Plan
+                    </p>
+                    <button onClick={() => setIsOpen(true)} className="btn-gold"
+                      data-aos="zoom-in" data-aos-delay="400"
+                      style={{ padding: '11px 32px', fontSize: '13px', letterSpacing: '0.1em' }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                      </svg>
+                      View Plan
+                    </button>
+                  </div>
+                </>
+              )}
+
+              {/* Zoom badge when Site Master Plan is active */}
+              {activePlan === 0 && (
                 <div style={{
-                  width: '52px', height: '52px', borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(4px)',
-                  border: '2px solid rgba(255,255,255,0.3)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  marginBottom: '4px',
+                  position: 'absolute', bottom: '16px', right: '16px', zIndex: 10,
+                  background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(4px)',
+                  borderRadius: '6px', padding: '6px 12px',
+                  display: 'flex', alignItems: 'center', gap: '6px',
+                  border: '1px solid rgba(255,255,255,0.15)',
+                  transition: 'background 0.2s',
                 }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M9 21V9" />
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
                   </svg>
+                  <span style={{
+                    color: '#fff', fontSize: '11px', fontFamily: F_JOST,
+                    fontWeight: '600', letterSpacing: '0.05em', textTransform: 'uppercase'
+                  }}>
+                    Click to Zoom
+                  </span>
                 </div>
-                <p style={{
-                  fontFamily: F_JOST, fontSize: '13px', color: 'rgba(255,255,255,0.7)',
-                  margin: 0, fontWeight: '600', letterSpacing: '0.04em'
-                }}>
-                  Register to Unlock Floor Plan
-                </p>
-                <button onClick={() => setIsOpen(true)} className="btn-gold"
-                  data-aos="zoom-in" data-aos-delay="400"
-                  style={{ padding: '11px 32px', fontSize: '13px', letterSpacing: '0.1em' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                  </svg>
-                  View Plan
-                </button>
-              </div>
+              )}
             </div>
           </div>
 
         </div>
       </div>
+
+      {/* ── Lightbox Modal for Site Master Plan ── */}
+      {showLightbox && activePlan === 0 && (
+        <div 
+          className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-10"
+          onClick={() => setShowLightbox(false)}
+        >
+          {/* Close Button */}
+          <button 
+            className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors z-[10000] p-2 bg-black/40 rounded-full"
+            onClick={() => setShowLightbox(false)}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+
+          {/* Center Content */}
+          <div className="relative w-full max-w-[95vw] max-h-[90vh] flex flex-col items-center justify-center">
+            <img 
+              src={plans[0].img?.src || plans[0].img} 
+              alt="Site Master Plan Full View" 
+              className="max-w-full max-h-[85vh] object-contain shadow-2xl transition-all duration-300 rounded-lg bg-white/5"
+              onClick={(e) => e.stopPropagation()} 
+            />
+            <div 
+              className="mt-3 text-center text-white/90 text-xs md:text-sm tracking-widest font-semibold uppercase"
+              style={{ fontFamily: F_JOST }}
+            >
+              Site Master Plan
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
