@@ -12,9 +12,16 @@ const plans = [
   { label: '5 BHK',           img: masterplanImages.bhk45 },
 ]
 
+// ★ MASTER PLAN BLUR / UNBLUR TOGGLE:
+// Abhi master plan ko blur rehne dene aur click par Lead Popup khulne ke liye: false rakhein.
+// Jab naya master plan upload karne ke baad clear + zoomable dekhna ho to: true kar dein.
+const SHOW_MASTERPLAN_UNBLURRED = false
+
 const MasterPlan = ({ setIsOpen }) => {
   const [activePlan, setActivePlan] = useState(0)
   const [showLightbox, setShowLightbox] = useState(false)
+
+  const isUnblocked = SHOW_MASTERPLAN_UNBLURRED && activePlan === 0
 
   return (
     <section id="masterplan" style={{
@@ -137,7 +144,7 @@ const MasterPlan = ({ setIsOpen }) => {
           {/* RIGHT — Image preview */}
           <div className="w-full lg:flex-1" data-aos="zoom-in">
             <div 
-              onClick={() => activePlan === 0 ? setShowLightbox(true) : setIsOpen(true)}
+              onClick={() => isUnblocked ? setShowLightbox(true) : setIsOpen(true)}
               style={{
                 position: 'relative', borderRadius: '8px', overflow: 'hidden',
                 border: '1px solid #D5C2A8',
@@ -167,16 +174,16 @@ const MasterPlan = ({ setIsOpen }) => {
                 </span>
               </div>
 
-              {/* Image (unblurred for Site Master Plan, blurred for floor plans) */}
+              {/* Image (unblurred for Site Master Plan only when unblocked, otherwise blurred) */}
               <Image src={plans[activePlan].img} alt={plans[activePlan].label} fill
                 style={{ 
-                  objectFit: activePlan === 0 ? 'contain' : 'cover', 
-                  filter: activePlan === 0 ? 'none' : 'blur(5px)', 
-                  transform: activePlan === 0 ? 'none' : 'scale(1.06)' 
+                  objectFit: isUnblocked ? 'contain' : 'cover', 
+                  filter: isUnblocked ? 'none' : 'blur(5px)', 
+                  transform: isUnblocked ? 'none' : 'scale(1.06)' 
                 }} />
 
-              {/* Dark overlay & Unlock CTA only for unit floor plans */}
-              {activePlan !== 0 && (
+              {/* Dark overlay & Unlock CTA */}
+              {!isUnblocked && (
                 <>
                   {/* Dark overlay */}
                   <div style={{
@@ -222,8 +229,8 @@ const MasterPlan = ({ setIsOpen }) => {
                 </>
               )}
 
-              {/* Zoom badge when Site Master Plan is active */}
-              {activePlan === 0 && (
+              {/* Zoom badge when Site Master Plan is active & unblocked */}
+              {isUnblocked && (
                 <div style={{
                   position: 'absolute', bottom: '16px', right: '16px', zIndex: 10,
                   background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(4px)',
@@ -250,7 +257,7 @@ const MasterPlan = ({ setIsOpen }) => {
       </div>
 
       {/* ── Lightbox Modal for Site Master Plan ── */}
-      {showLightbox && activePlan === 0 && (
+      {showLightbox && isUnblocked && (
         <div 
           className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-10"
           onClick={() => setShowLightbox(false)}
