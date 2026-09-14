@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 
@@ -11,6 +11,7 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
   const [isTransitioning, setIsTransitioning] = useState(true)
   const [selectedImgIndex, setSelectedImgIndex] = useState(null)
   const [userInteracted, setUserInteracted] = useState(0)
+  const trackRef = useRef(null)
 
   const numItems = images?.length || 0;
   const extendedImages = numItems > 0 ? [
@@ -49,23 +50,26 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
   }
 
   const nextSlide = () => {
-    if (!isTransitioning) return;
+    if (!isTransitioning || index >= numItems + 1) return;
     setIndex((prev) => prev + 1);
     setUserInteracted(Date.now());
   }
 
   const prevSlide = () => {
-    if (!isTransitioning) return;
+    if (!isTransitioning || index <= 0) return;
     setIndex((prev) => prev - 1);
     setUserInteracted(Date.now());
   }
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => prev + 1);
+      setIndex((prev) => {
+        if (prev >= numItems + 1) return prev;
+        return prev + 1;
+      });
     }, 4000); // Autoplay every 4s
     return () => clearInterval(timer);
-  }, [userInteracted]);
+  }, [userInteracted, numItems]);
 
   // Handle the seamless jump
   useEffect(() => {
@@ -73,11 +77,21 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
     if (index === 0) {
       timeout = setTimeout(() => {
         setIsTransitioning(false);
+        if (trackRef.current) {
+          trackRef.current.style.transition = 'none';
+          trackRef.current.style.transform = `translateX(calc(-${numItems} * (var(--slide-w) + 16px)))`;
+          void trackRef.current.offsetHeight; // Force reflow
+        }
         setIndex(numItems);
       }, 700);
     } else if (index === numItems + 1) {
       timeout = setTimeout(() => {
         setIsTransitioning(false);
+        if (trackRef.current) {
+          trackRef.current.style.transition = 'none';
+          trackRef.current.style.transform = `translateX(calc(-1 * (var(--slide-w) + 16px)))`;
+          void trackRef.current.offsetHeight; // Force reflow
+        }
         setIndex(1);
       }, 700);
     }
@@ -89,6 +103,9 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
     if (!isTransitioning) {
       const raf = requestAnimationFrame(() => {
         requestAnimationFrame(() => {
+          if (trackRef.current) {
+            trackRef.current.style.transition = '';
+          }
           setIsTransitioning(true);
         });
       });
@@ -135,6 +152,7 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
             @media (min-width: 768px) { .carousel-container { --slide-w: 65%; } }
           `}} />
           <div 
+            ref={trackRef}
             className={`flex w-full ${isTransitioning ? 'transition-transform duration-700 ease-in-out' : ''}`}
             style={{ 
               transform: `translateX(calc(-${index} * (var(--slide-w) + 16px)))`,
