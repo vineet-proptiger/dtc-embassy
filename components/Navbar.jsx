@@ -92,7 +92,7 @@ const Navbar = ({ setIsOpen }) => {
         {/* Right Side: Phone Button (desktop) / Mobile hamburger (mobile) */}
         {/* DESKTOP PHONE BUTTON */}
         <div className="hidden lg:flex">
-          <a href="tel:9718344024" className="btn-brand" style={{
+          <a href="tel:9337712053" className="btn-brand" style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
@@ -104,7 +104,7 @@ const Navbar = ({ setIsOpen }) => {
             boxShadow: '0 4px 12px rgba(201, 169, 110, 0.2)',
           }}>
             <Phone size={15} fill="currentColor" />
-            9718344024
+            9337712053
           </a>
         </div>
 
@@ -163,7 +163,7 @@ const Navbar = ({ setIsOpen }) => {
           })}
           {/* Mobile drawer call CTA */}
           <div style={{ padding: '16px 24px', borderBottom: '1px solid #f5f5f5', display: 'flex', justifyContent: 'center' }}>
-            <a href="tel:9718344024" className="btn-brand" style={{
+            <a href="tel:9337712053" className="btn-brand" style={{
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -177,7 +177,7 @@ const Navbar = ({ setIsOpen }) => {
               boxShadow: '0 4px 12px rgba(201, 169, 110, 0.15)',
             }}>
               <Phone size={15} fill="currentColor" />
-              9718344024
+              9337712053
             </a>
           </div>
         </div>
