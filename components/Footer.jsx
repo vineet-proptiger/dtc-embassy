@@ -9,7 +9,7 @@ const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const Footer = () => (
   <footer style={{ background: '#000000', color: '#fff' }}>
 
-    <div style={{ maxWidth: '860px', margin: '0 auto', padding: '56px 24px 32px', textAlign: 'center' }}>
+    <div style={{ maxWidth: '860px', margin: '0 auto', textAlign: 'center' }} className="px-4 sm:px-6 pt-14 pb-8">
       <h2 style={{ fontSize: '24px', fontWeight: '800', fontFamily: F_JOST, marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.05em' }} data-aos="fade-in">
         DTC Embassy Villa
       </h2>
@@ -24,10 +24,43 @@ const Footer = () => (
         DTC Embassy Villas is a premium gated villa community spread across 6 acres on Rajarhat Main Road, offering elegant 4 &amp; 5 BHK independent villas. With spacious residences and premium specifications, it ensures exceptional privacy and a serene living environment.
       </p>
       
-      {/* RERA Block */}
-      <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.05)', padding: '10px 24px', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.1)' }}>
-        <span style={{ fontFamily: F_SANS, fontSize: '14px', color: '#aaa' }}>RERA No : </span>
-        <strong style={{ fontFamily: F_JOST, fontSize: '15px', color: '#fff', letterSpacing: '0.04em', wordBreak: 'break-word' }}>WBRERA/P/NOR/2026/004195</strong>
+      {/* RERA Blocks */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-4">
+        <div
+          className="whitespace-nowrap max-w-full"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'rgba(255,255,255,0.05)',
+            padding: '9px 18px',
+            borderRadius: '4px',
+            border: '1px solid rgba(255,255,255,0.1)',
+            whiteSpace: 'nowrap',
+            boxSizing: 'border-box',
+          }}
+        >
+          <span style={{ fontFamily: F_SANS, fontSize: 'clamp(11.5px, 2.8vw, 13.5px)', color: '#aaa' }}>Project Rera No :&nbsp;</span>
+          <strong style={{ fontFamily: F_JOST, fontSize: 'clamp(12px, 3vw, 14.5px)', color: '#fff', letterSpacing: '0.04em' }}>WBRERA/P/NOR/2026/004195</strong>
+        </div>
+
+        <div
+          className="whitespace-nowrap max-w-full"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'rgba(255,255,255,0.05)',
+            padding: '9px 18px',
+            borderRadius: '4px',
+            border: '1px solid rgba(255,255,255,0.1)',
+            whiteSpace: 'nowrap',
+            boxSizing: 'border-box',
+          }}
+        >
+          <span style={{ fontFamily: F_SANS, fontSize: 'clamp(11.5px, 2.8vw, 13.5px)', color: '#aaa' }}>Agent Rera No :&nbsp;</span>
+          <strong style={{ fontFamily: F_JOST, fontSize: 'clamp(12px, 3vw, 14.5px)', color: '#fff', letterSpacing: '0.04em' }}>WBRERA/A/KOL/2023/000061</strong>
+        </div>
       </div>
     </div>
 
